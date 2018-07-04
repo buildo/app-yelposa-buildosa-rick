@@ -2,13 +2,13 @@
 # yarn lockfile v1
 
 
-"@buildo/bento@^5.0.0":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@buildo/bento/-/bento-5.0.4.tgz#11da462983c5de9605c496c4c479d4b495b1eed9"
+"@buildo/bento@^6.0.1":
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/@buildo/bento/-/bento-6.0.1.tgz#42654fbf67587ea4e44de4d8ee8c4908a16de03d"
   dependencies:
     avenger "^2.2.0"
     buildo-normalize-css "3.0.2"
-    buildo-react-components "0.36.1"
+    buildo-react-components "^0.37.0"
     buildo-state "0.8.3"
     cookies-js "1.2.3"
     history "^4.7.2"
@@ -459,7 +459,7 @@ aws4@^1.2.1, aws4@^1.6.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.7.0.tgz#d4d0e9b9dbfca77bf08eeb0a8a471550fe39e289"
 
-babel-cli@^6.16.0, babel-cli@^6.24.1:
+babel-cli@^6.16.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-cli/-/babel-cli-6.26.0.tgz#502ab54874d7db88ad00b887a06383ce03d002f1"
   dependencies:
@@ -1323,9 +1323,9 @@ buildo-normalize-css@3.0.2:
   dependencies:
     normalize.css "^6.0.0"
 
-buildo-react-components@0.36.1:
-  version "0.36.1"
-  resolved "https://registry.yarnpkg.com/buildo-react-components/-/buildo-react-components-0.36.1.tgz#e9e4d0f5939e456d28c441d605b88cb5d0054a67"
+buildo-react-components@^0.37.0:
+  version "0.37.3"
+  resolved "https://registry.yarnpkg.com/buildo-react-components/-/buildo-react-components-0.37.3.tgz#3c798d656299f9bfd39114c30dafaeb5cb8930d3"
   dependencies:
     bowser "1.7.3"
     classnames "2.2.5"
@@ -1341,10 +1341,9 @@ buildo-react-components@0.36.1:
     react-dates "12.5.1"
     react-dnd "2.4.0"
     react-dnd-html5-backend "2.4.1"
-    react-flexview "3.0.1"
+    react-flexview "3.0.2"
     react-input-children "4.0.1"
     react-select "1.0.1"
-    react-skinnable "1.1.1"
     react-transition-group "1.2.0"
     sass-flex-mixins "0.1.0"
     tcomb "3.2.22"
@@ -5961,6 +5960,18 @@ react-flexview@3.0.1:
     sass-flex-mixins "^0.1.0"
     typelevel-ts "^0.2.2"
 
+react-flexview@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-flexview/-/react-flexview-3.0.2.tgz#c7b96c7b165127a8e9b44a42716bca8c4a85aaf3"
+  dependencies:
+    classnames "^2.2.5"
+    lodash.omit "^4.5.0"
+    lodash.pick "^4.4.0"
+    lodash.some "^4.6.0"
+    prop-types "^15.5.6"
+    sass-flex-mixins "^0.1.0"
+    typelevel-ts "^0.2.2"
+
 react-input-autosize@^2.1.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/react-input-autosize/-/react-input-autosize-2.2.1.tgz#ec428fa15b1592994fb5f9aa15bb1eb6baf420f8"
@@ -6009,14 +6020,6 @@ react-select@1.0.1:
     classnames "^2.2.4"
     prop-types "^15.5.8"
     react-input-autosize "^2.1.0"
-
-react-skinnable@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/react-skinnable/-/react-skinnable-1.1.1.tgz#7c44c669c3350a27ff0d7851a4e25a10956317ca"
-  dependencies:
-    babel-cli "^6.24.1"
-    babel-preset-buildo "^0.1.1"
-    tcomb "^3.0.0"
 
 react-transition-group@1.2.0:
   version "1.2.0"

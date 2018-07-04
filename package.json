@@ -9,7 +9,7 @@
     "lint-style": "bento lint-style"
   },
   "dependencies": {
-    "@buildo/bento": "^5.0.0",
+    "@buildo/bento": "^6.0.1",
     "classnames": "^2.2.5",
     "es6-promise": "^4.2.2",
     "lodash": "^4.17.4",
