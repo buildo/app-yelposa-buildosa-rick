@@ -25,18 +25,18 @@ import { HistoryLocation } from '@buildo/bento/data';
 
 export { HistoryLocation };
 
-export type CurrentView = 'home' | 'hello';
+export type CurrentView = 'home' | 'search';
 
 export function locationToView(location: HistoryLocation): CurrentView {
   switch (location.pathname) {
-    case '/hello': return 'hello';
+    case '/search': return 'search';
     default: return 'home';
   }
 }
 
 export function viewToLocation(view: CurrentView): HistoryLocation {
   switch (view) {
-    case 'hello': return { pathname: '/hello', search: {} };
+    case 'search': return { pathname: '/search', search: {} };
     default: return { pathname: '/', search: {} }
   }
 }

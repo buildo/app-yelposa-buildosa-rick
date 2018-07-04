@@ -25,7 +25,7 @@ type Props = typeof queries.Props & typeof commands.Props;
 const dropdownOptions = [{
   value: 'home', label: 'Home'
 }, {
-  value: 'hello', label: 'Hello',
+  value: 'search', label: 'Search',
 }];
 
 class SwitchViewDropdown extends React.Component<Props> {
