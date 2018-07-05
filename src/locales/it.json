@@ -1,0 +1,9 @@
+{
+  "locales": [
+    "it"
+  ],
+  "messages": {
+    "Search.hello": "Ciao yelpatore!",
+    "Search.near": "Trova qualcosa vicino:"
+  }
+}
