@@ -3,6 +3,7 @@ import View from "View";
 import Input from "Input";
 import Dropdown from "Dropdown";
 import { FormattedMessage } from "react-intl";
+import "./searchheader.scss";
 
 /*
 The search component instead holds some control state, handled with React state.
@@ -73,14 +74,12 @@ export default class Search extends React.Component<{}, State> {
         vAlignContent="center"
         className="search"
       >
-        <FormattedMessage id="Search.hello" />
+        <div className="welcomemessage">
+          <FormattedMessage id="Search.hello" />
+        </div>
         <View hAlignContent="center">
           <View className="label">
-            <div id="welcomemessage">
-              <span>
-                <FormattedMessage id="Search.searcharestaurant" />
-              </span>
-            </div>
+            <FormattedMessage id="Search.searcharestaurant" />
           </View>
           <Input
             placeholder="...insert address here!"

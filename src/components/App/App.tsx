@@ -24,10 +24,7 @@ class App extends React.Component<typeof queries.Props> {
   render() {
     return (
       <View column className="app">
-        <h1>App Yelposa Buildosa</h1>
-        <View column>
-          <SearchHeader />
-        </View>
+        <SearchHeader />
       </View>
     );
   }
