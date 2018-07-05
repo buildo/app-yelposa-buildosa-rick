@@ -1,9 +1,8 @@
 {
-  "locales": [
-    "it"
-  ],
+  "locales": ["it"],
   "messages": {
     "Search.hello": "Ciao yelpatore!",
-    "Search.near": "Trova qualcosa vicino:"
+    "Search.searcharestaurant": "Trova un ristorante vicino:",
+    "Search.within": "entro:"
   }
 }

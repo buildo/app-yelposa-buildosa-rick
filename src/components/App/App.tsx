@@ -12,7 +12,7 @@ In this simple example it does a bit of both.
 
 import * as React from "react";
 import View from "View";
-import Search from "Search";
+import SearchHeader from "SearchHeader";
 import { declareQueries } from "@buildo/bento/data";
 import { currentView } from "queries";
 
@@ -24,8 +24,10 @@ class App extends React.Component<typeof queries.Props> {
   render() {
     return (
       <View column className="app">
-        <h1>Bento App</h1>
-        <Search />
+        <h1>App Yelposa Buildosa</h1>
+        <View column>
+          <SearchHeader />
+        </View>
       </View>
     );
   }

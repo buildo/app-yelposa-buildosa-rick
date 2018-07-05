@@ -1,4 +1,4 @@
-@import '~theme/variables.scss';
+@import "~theme/variables.scss";
 
 .search {
   margin-top: 40px;
@@ -11,4 +11,9 @@
     margin-left: 10px;
     color: $strawberry;
   }
+}
+
+.welcomemessage span {
+  color: $mediumBlue;
+  font-size: 90px;
 }
