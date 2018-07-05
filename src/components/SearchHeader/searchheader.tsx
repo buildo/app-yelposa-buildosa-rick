@@ -80,9 +80,9 @@ class SearchHeaderWrapper extends React.Component<
         vAlignContent="center"
         className="search"
       >
-        <div className="welcomemessage">
+        <View className="welcomemessage">
           <FormattedMessage id="SearchHeader.hello" />
-        </div>
+        </View>
         <View hAlignContent="center">
           <View className="label">
             <FormattedMessage id="SearchHeader.searcharestaurant" />

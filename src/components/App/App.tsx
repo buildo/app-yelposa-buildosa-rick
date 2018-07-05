@@ -16,8 +16,6 @@ import SearchHeader from "SearchHeader";
 import { declareQueries } from "@buildo/bento/data";
 import { currentView } from "queries";
 
-import "./app.scss";
-
 const queries = declareQueries({ currentView });
 
 class App extends React.Component<typeof queries.Props> {
