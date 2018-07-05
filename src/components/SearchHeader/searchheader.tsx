@@ -4,6 +4,7 @@ import Input from "Input";
 import Dropdown from "Dropdown";
 import { FormattedMessage } from "react-intl";
 import "./searchheader.scss";
+import { injectIntl, InjectedIntlProps } from "react-intl";
 
 /*
 The search component instead holds some control state, handled with React state.
@@ -35,7 +36,12 @@ const dropdownOptions = [
   }
 ];
 
-export default class Search extends React.Component<{}, State> {
+interface SearchHeaderProps {}
+
+class SearchHeaderWrapper extends React.Component<
+  SearchHeaderProps & InjectedIntlProps,
+  State
+> {
   state = {
     location: "",
     range: dropdownOptions[0].value
@@ -75,14 +81,16 @@ export default class Search extends React.Component<{}, State> {
         className="search"
       >
         <div className="welcomemessage">
-          <FormattedMessage id="Search.hello" />
+          <FormattedMessage id="SearchHeader.hello" />
         </div>
         <View hAlignContent="center">
           <View className="label">
-            <FormattedMessage id="Search.searcharestaurant" />
+            <FormattedMessage id="SearchHeader.searcharestaurant" />
           </View>
           <Input
-            placeholder="...insert address here!"
+            placeholder={this.props.intl.formatMessage({
+              id: "SearchHeader.placeholder"
+            })}
             value={location}
             onChange={onChangeLocation}
           />
@@ -102,3 +110,6 @@ export default class Search extends React.Component<{}, State> {
     );
   }
 }
+
+const SearchHeader = injectIntl<SearchHeaderProps>(SearchHeaderWrapper);
+export default SearchHeader;

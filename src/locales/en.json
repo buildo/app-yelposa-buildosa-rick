@@ -1,8 +1,9 @@
 {
   "locales": ["en"],
   "messages": {
-    "Search.hello": "Hello yelpator!",
-    "Search.searcharestaurant": "Find a restaurant near: ",
-    "Search.within": "within:"
+    "SearchHeader.hello": "Hello yelpator!",
+    "SearchHeader.searcharestaurant": "Find a restaurant near: ",
+    "SearchHeader.within": "within:",
+    "SearchHeader.placeholder": "...type an address!"
   }
 }

@@ -16,6 +16,7 @@
     "lodash": "^4.17.10",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-intl": "^2.4.0",
     "stylelint-config-prettier": "^3.3.0"
   },
   "devDependencies": {
