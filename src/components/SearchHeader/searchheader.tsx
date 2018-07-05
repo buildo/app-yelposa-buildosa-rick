@@ -95,7 +95,7 @@ class SearchHeaderWrapper extends React.Component<
             onChange={onChangeLocation}
           />
           <View className="label">
-            <FormattedMessage id="Search.within" />
+            <FormattedMessage id="SearchHeader.within" />
           </View>
           <View className="switch-view-dropdown">
             <Dropdown
