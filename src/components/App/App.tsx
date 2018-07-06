@@ -22,9 +22,9 @@ type State = {
 };
 class App extends React.Component<State> {
   state = {
-    places: Array<string>(0),
+    places: ["posto1", "posto2", "posto3"],
     isSearching: false,
-    location: ""
+    location: "Milano"
   };
   render() {
     return (
