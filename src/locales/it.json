@@ -4,6 +4,7 @@
     "SearchHeader.hello": "Ciao yelpatore!",
     "SearchHeader.searcharestaurant": "Trova un ristorante vicino:",
     "SearchHeader.within": "entro:",
-    "SearchHeader.placeholder": "...digita un indirizzo!"
+    "SearchHeader.placeholder": "...digita un indirizzo!",
+    "SearchResults.entrypoint": "I migliori ristoranti a "
   }
 }

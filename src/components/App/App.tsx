@@ -13,19 +13,31 @@ In this simple example it does a bit of both.
 import * as React from "react";
 import View from "View";
 import SearchHeader from "SearchHeader";
-import { declareQueries } from "@buildo/bento/data";
-import { currentView } from "queries";
+import SearchResults from "SearchResults";
 
-const queries = declareQueries({ currentView });
-
-class App extends React.Component<typeof queries.Props> {
+type State = {
+  places: Array<string>[];
+  isSearching: boolean;
+  location: string;
+};
+class App extends React.Component<State> {
+  state = {
+    places: Array<string>(0),
+    isSearching: false,
+    location: ""
+  };
   render() {
     return (
       <View column className="app">
         <SearchHeader />
+        <SearchResults
+          places={this.state.places}
+          location={this.state.location}
+          isSearching={this.state.isSearching}
+        />
       </View>
     );
   }
 }
 
-export default queries(App);
+export default App;
