@@ -450,11 +450,11 @@ autoprefixer@^6.0.0, autoprefixer@^6.3.1:
     postcss-value-parser "^3.2.3"
 
 autoprefixer@^8.0.0:
-  version "8.6.4"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-8.6.4.tgz#6bf501de426a3b95973f5d237dbcc9181e9904d2"
+  version "8.6.5"
+  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-8.6.5.tgz#343f3d193ed568b3208e00117a1b96eb691d4ee9"
   dependencies:
     browserslist "^3.2.8"
-    caniuse-lite "^1.0.30000859"
+    caniuse-lite "^1.0.30000864"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^6.0.23"
@@ -1353,7 +1353,7 @@ buildo-normalize-css@3.0.2:
   dependencies:
     normalize.css "^6.0.0"
 
-buildo-react-components@^0.37.0, buildo-react-components@^0.37.3:
+buildo-react-components@^0.37.0:
   version "0.37.3"
   resolved "https://registry.yarnpkg.com/buildo-react-components/-/buildo-react-components-0.37.3.tgz#3c798d656299f9bfd39114c30dafaeb5cb8930d3"
   dependencies:
@@ -1507,7 +1507,7 @@ caniuse-lite@^1.0.30000844:
   version "1.0.30000862"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000862.tgz#7ca14f5079fa8f77ac814fca92d45deb4b7eff9d"
 
-caniuse-lite@^1.0.30000859:
+caniuse-lite@^1.0.30000864:
   version "1.0.30000864"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000864.tgz#7a08c78da670f23c06f11aa918831b8f2dd60ddc"
 

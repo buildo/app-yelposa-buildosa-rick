@@ -48,19 +48,13 @@ class SearchHeaderWrapper extends React.Component<
   };
 
   onChangeLocation = (newLocation: string) => {
-    let previousState = this.state;
-
     this.setState({
-      location: newLocation,
-      range: previousState.range
+      location: newLocation
     });
   };
 
   onChangeDropdown = (newRange: number) => {
-    let previousState = this.state;
-
     this.setState({
-      location: previousState.location,
       range: newRange
     });
   };
