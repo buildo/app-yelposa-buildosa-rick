@@ -6,12 +6,6 @@ import { FormattedMessage } from "react-intl";
 import "./searchheader.scss";
 import { injectIntl, InjectedIntlProps } from "react-intl";
 
-/*
-The search component instead holds some control state, handled with React state.
-This means it will be reinitialized to `10` every time the component
-is unmounted and re-mounted.
-*/
-
 type State = {
   location: string;
   range: number;
@@ -105,5 +99,10 @@ class SearchHeaderWrapper extends React.Component<
   }
 }
 
+/*
+With component props = InjectedIntlProps (no other props) the signature
+of injectIntl is broken and doesn't work as expected, so it's mandatory
+to add the type param when invoking injectIntl.
+*/
 const SearchHeader = injectIntl<SearchHeaderProps>(SearchHeaderWrapper);
 export default SearchHeader;
