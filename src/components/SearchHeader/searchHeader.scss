@@ -1,0 +1,19 @@
+@import "~theme/variables.scss";
+
+.search {
+  background: $primary-color;
+
+  .label {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .welcomemessage {
+    span {
+      font-size: 30px;
+      font-weight: $bold;
+    }
+  }
+
+  font: 400 26px "Open Sans", "Helvetica Neue", Sans-serif;
+  color: $accent-color;
+}
