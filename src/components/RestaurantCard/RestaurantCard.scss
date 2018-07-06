@@ -1,19 +1,27 @@
 @import "~theme/variables.scss";
 
-.search {
-  background: $primary-color;
-
-  .label {
-    margin-right: 10px;
-    margin-left: 10px;
-  }
-  .welcomemessage {
-    span {
-      font-size: 30px;
-      font-weight: $bold;
+.card {
+  .subtitle {
+    .rating {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    .phone {
+      margin-right: 10px;
+      margin-left: 10px;
     }
   }
+  .name {
+    font: 400 20px "Open Sans", "Helvetica Neue", Sans-serif;
+    font-weight: $bold;
+  }
+}
 
-  font: 400 26px "Open Sans", "Helvetica Neue", Sans-serif;
-  color: $accent-color;
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }

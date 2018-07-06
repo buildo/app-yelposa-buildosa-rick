@@ -22,13 +22,35 @@ type State = {
 };
 class App extends React.Component<State> {
   state = {
-    places: ["posto1", "posto2", "posto3"],
+    places: [
+      {
+        name: "posto1",
+        rating: 5,
+        phone: "0202020",
+        image: "lol",
+        isPlaceholder: true
+      },
+      {
+        name: "posto2",
+        rating: 5,
+        phone: "0202020",
+        image: "lol",
+        isPlaceholder: true
+      },
+      {
+        name: "posto3",
+        rating: 5,
+        phone: "0202020",
+        image: "lol",
+        isPlaceholder: true
+      }
+    ],
     isSearching: false,
     location: "Milano"
   };
   render() {
     return (
-      <View column className="app">
+      <View column height="100%" className="app">
         <SearchHeader />
         <SearchResults
           places={this.state.places}

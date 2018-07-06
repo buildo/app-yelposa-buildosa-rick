@@ -21,22 +21,40 @@ in the example app created by default:
 
 */
 
-import { HistoryLocation } from '@buildo/bento/data';
+import { HistoryLocation } from "@buildo/bento/data";
 
 export { HistoryLocation };
 
-export type CurrentView = 'home' | 'search';
+export type RestaurantInfo = {
+  name: string;
+  rating: number;
+  phone: string;
+  image: string;
+  isPlaceholder: boolean;
+};
+
+export type SearchModel = {
+  places: Array<RestaurantInfo>;
+  location: string;
+  isSearching: boolean;
+};
+
+export type CurrentView = "home" | "search";
 
 export function locationToView(location: HistoryLocation): CurrentView {
   switch (location.pathname) {
-    case '/search': return 'search';
-    default: return 'home';
+    case "/search":
+      return "search";
+    default:
+      return "home";
   }
 }
 
 export function viewToLocation(view: CurrentView): HistoryLocation {
   switch (view) {
-    case 'search': return { pathname: '/search', search: {} };
-    default: return { pathname: '/', search: {} }
+    case "search":
+      return { pathname: "/search", search: {} };
+    default:
+      return { pathname: "/", search: {} };
   }
 }

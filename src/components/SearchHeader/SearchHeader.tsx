@@ -64,6 +64,7 @@ class SearchHeaderWrapper extends React.Component<
       <View
         column
         height={200}
+        shrink={false}
         hAlignContent="center"
         vAlignContent="center"
         className="search"
