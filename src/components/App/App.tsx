@@ -13,19 +13,70 @@ In this simple example it does a bit of both.
 import * as React from "react";
 import View from "View";
 import SearchHeader from "SearchHeader";
-import { declareQueries } from "@buildo/bento/data";
-import { currentView } from "queries";
+import SearchResults from "SearchResults";
 
-const queries = declareQueries({ currentView });
-
-class App extends React.Component<typeof queries.Props> {
+type State = {
+  places: Array<string>[];
+  isSearching: boolean;
+  location: string;
+};
+class App extends React.Component<State> {
+  state = {
+    places: [
+      {
+        name: "Fevah 4 the Sushi ",
+        rating: 5,
+        phone: "3289436673",
+        image:
+          "https://s3-media4.fl.yelpcdn.com/bphoto/49rixgj-p_VQhzDbt4Vn4g/180s.jpg",
+        isPlaceholder: false
+      },
+      {
+        name: "Da Gió",
+        rating: 5,
+        phone: "0202020",
+        image:
+          "https://s3-media2.fl.yelpcdn.com/bphoto/5kbwMuOqZ4s0-ZGVa0QOwQ/180s.jpg",
+        isPlaceholder: false
+      },
+      {
+        name: "Claudioloso",
+        rating: 5,
+        phone: "0202020",
+        image:
+          "https://s3-media1.fl.yelpcdn.com/bphoto/z0sqOMEJIyZZcqq_dDQolA/180s.jpg",
+        isPlaceholder: false
+      },
+      {
+        name: "",
+        rating: 5,
+        phone: "",
+        image: "",
+        isPlaceholder: true
+      },
+      {
+        name: "",
+        rating: 5,
+        phone: "",
+        image: "",
+        isPlaceholder: true
+      }
+    ],
+    isSearching: false,
+    location: "Milano"
+  };
   render() {
     return (
-      <View column className="app">
+      <View column height="100%" className="app">
         <SearchHeader />
+        <SearchResults
+          places={this.state.places}
+          location={this.state.location}
+          isSearching={this.state.isSearching}
+        />
       </View>
     );
   }
 }
 
-export default queries(App);
+export default App;

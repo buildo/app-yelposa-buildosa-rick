@@ -1,0 +1,21 @@
+@import "~theme/variables.scss";
+
+.results {
+  .heading {
+    h2 {
+      font-size: 30px;
+      font-weight: $bold;
+      margin-left: 50px;
+    }
+  }
+
+  color: $accent-color;
+  height: 100vh;
+
+  .listing {
+    width: auto;
+    box-sizing: border-box;
+    margin-left: 40px;
+    margin-right: 60px;
+  }
+}
