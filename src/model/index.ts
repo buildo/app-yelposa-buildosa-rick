@@ -36,6 +36,7 @@ export type RestaurantInfo = {
 export type SearchModel = {
   places: Array<RestaurantInfo>;
   location: string;
+  range: number;
   isSearching: boolean;
 };
 

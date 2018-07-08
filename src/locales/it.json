@@ -5,6 +5,7 @@
     "SearchHeader.searcharestaurant": "Trova un ristorante vicino:",
     "SearchHeader.within": "entro:",
     "SearchHeader.placeholder": "...digita un indirizzo!",
-    "SearchResults.entrypoint": "I migliori ristoranti a "
+    "SearchResults.entrypoint": "I migliori ristoranti a ",
+    "SearchResults.within": "entro"
   }
 }

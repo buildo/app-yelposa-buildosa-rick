@@ -5,10 +5,10 @@ import Dropdown from "Dropdown";
 import { FormattedMessage } from "react-intl";
 import "./searchheader.scss";
 import { injectIntl, InjectedIntlProps } from "react-intl";
+import debounce = require("lodash/debounce");
 
 type State = {
-  location: string;
-  range: number;
+  value: string;
 };
 
 const dropdownOptions = [
@@ -30,36 +30,32 @@ const dropdownOptions = [
   }
 ];
 
-interface SearchHeaderProps {}
+interface SearchHeaderProps {
+  location: string;
+  range: number;
+  onChangeLocation: (newLocation: string) => void;
+  onChangeRange: (newRange: number) => void;
+}
 
 class SearchHeaderWrapper extends React.Component<
   SearchHeaderProps & InjectedIntlProps,
   State
 > {
-  state = {
-    location: "",
-    range: dropdownOptions[0].value
-  };
+  state = { value: "" };
 
-  onChangeLocation = (newLocation: string) => {
-    this.setState({
-      location: newLocation
+  onChangeInputLocation = (newLocation: string) => {
+    this.setState({ value: newLocation }, () => {
+      this.onChangeLocationDebounced(newLocation);
     });
   };
+
+  onChangeLocationDebounced = debounce(this.props.onChangeLocation, 1000);
 
   onChangeDropdown = (newRange: number) => {
-    this.setState({
-      range: newRange
-    });
+    this.props.onChangeRange(newRange);
   };
 
   render() {
-    const {
-      state: { location, range },
-      onChangeLocation,
-      onChangeDropdown
-    } = this;
-
     return (
       <View
         column
@@ -80,8 +76,8 @@ class SearchHeaderWrapper extends React.Component<
             placeholder={this.props.intl.formatMessage({
               id: "SearchHeader.placeholder"
             })}
-            value={location}
-            onChange={onChangeLocation}
+            value={this.state.value}
+            onChange={this.onChangeInputLocation}
           />
           <View className="label">
             <FormattedMessage id="SearchHeader.within" />
@@ -89,8 +85,8 @@ class SearchHeaderWrapper extends React.Component<
           <View className="switch-view-dropdown">
             <Dropdown
               options={dropdownOptions}
-              value={range}
-              onChange={onChangeDropdown}
+              value={this.props.range}
+              onChange={this.onChangeDropdown}
               size="small"
             />
           </View>

@@ -2,10 +2,19 @@
 
 .results {
   .heading {
-    h2 {
+    .description {
+      font-size: 30px;
+      font-weight: $regular;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .values {
       font-size: 30px;
       font-weight: $bold;
-      margin-left: 50px;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
   }
 

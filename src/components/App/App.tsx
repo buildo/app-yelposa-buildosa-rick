@@ -19,6 +19,7 @@ type State = {
   places: Array<string>[];
   isSearching: boolean;
   location: string;
+  range: number;
 };
 class App extends React.Component<State> {
   state = {
@@ -63,15 +64,27 @@ class App extends React.Component<State> {
       }
     ],
     isSearching: false,
-    location: "Milano"
+    location: "",
+    range: 100
   };
+
   render() {
     return (
       <View column height="100%" className="app">
-        <SearchHeader />
+        <SearchHeader
+          location={this.state.location}
+          range={this.state.range}
+          onChangeLocation={(newLocation: string) => {
+            this.setState({ location: newLocation });
+          }}
+          onChangeRange={(newRange: number) => {
+            this.setState({ range: newRange });
+          }}
+        />
         <SearchResults
           places={this.state.places}
           location={this.state.location}
+          range={this.state.range}
           isSearching={this.state.isSearching}
         />
       </View>
