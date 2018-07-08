@@ -7,8 +7,8 @@ import { RestaurantInfo } from "model";
 const RestaurantCard: React.SFC<RestaurantInfo> = props => {
   if (props.isPlaceholder == false) {
     return (
-      <Panel type="floating">
-        <View className="card">
+      <Panel className="card" type="floating">
+        <View height="80" className="card">
           <View shrink className="description">
             <img src={`${props.image}`} />
             <View column>
@@ -38,8 +38,8 @@ const RestaurantCard: React.SFC<RestaurantInfo> = props => {
     );
   } else {
     return (
-      <Panel type="floating">
-        <View className="card">
+      <Panel className="card" type="floating">
+        <View height="80" className="card">
           <View shrink className="description">
             <img src="https://cdn-images-1.medium.com/max/242/1*meum96zjiygZPcHIt8v9iw@2x.png" />
             <View column>
