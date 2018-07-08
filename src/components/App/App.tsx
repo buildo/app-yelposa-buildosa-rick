@@ -24,24 +24,41 @@ class App extends React.Component<State> {
   state = {
     places: [
       {
-        name: "posto1",
+        name: "Fevah 4 the Sushi ",
+        rating: 5,
+        phone: "3289436673",
+        image:
+          "https://s3-media4.fl.yelpcdn.com/bphoto/49rixgj-p_VQhzDbt4Vn4g/180s.jpg",
+        isPlaceholder: false
+      },
+      {
+        name: "Da Gió",
         rating: 5,
         phone: "0202020",
-        image: "lol",
+        image:
+          "https://s3-media2.fl.yelpcdn.com/bphoto/5kbwMuOqZ4s0-ZGVa0QOwQ/180s.jpg",
+        isPlaceholder: false
+      },
+      {
+        name: "Claudioloso",
+        rating: 5,
+        phone: "0202020",
+        image:
+          "https://s3-media1.fl.yelpcdn.com/bphoto/z0sqOMEJIyZZcqq_dDQolA/180s.jpg",
+        isPlaceholder: false
+      },
+      {
+        name: "",
+        rating: 5,
+        phone: "",
+        image: "",
         isPlaceholder: true
       },
       {
-        name: "posto2",
+        name: "",
         rating: 5,
-        phone: "0202020",
-        image: "lol",
-        isPlaceholder: true
-      },
-      {
-        name: "posto3",
-        rating: 5,
-        phone: "0202020",
-        image: "lol",
+        phone: "",
+        image: "",
         isPlaceholder: true
       }
     ],

@@ -1,23 +1,79 @@
 @import "~theme/variables.scss";
 
 .card {
-  .subtitle {
+  .content {
+    .name {
+      font: 400 20px "Open Sans", "Helvetica Neue", Sans-serif;
+      font-weight: $bold;
+      margin-left: 10px;
+    }
+    .subtitle {
+      font: 400 20px "Open Sans", "Helvetica Neue", Sans-serif;
+      margin-left: 10px;
+    }
     .rating {
+      margin-top: 10px;
       margin-right: 10px;
       margin-left: 10px;
+      span {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
     }
     .phone {
+      margin-top: 5px;
       margin-right: 10px;
       margin-left: 10px;
+      span {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+    .image {
+      height: 120px;
+      width: 120px;
     }
   }
-  .name {
-    font: 400 20px "Open Sans", "Helvetica Neue", Sans-serif;
-    font-weight: $bold;
-  }
+}
 
-  width: auto;
-  box-sizing: border-box;
+.cardplaceholder {
+  .content {
+    .name {
+      font: 400 20px "Open Sans", "Helvetica Neue", Sans-serif;
+      font-weight: $bold;
+      color: $coolGrey;
+      margin-left: 10px;
+    }
+    .subtitle {
+      font: 400 20px "Open Sans", "Helvetica Neue", Sans-serif;
+      margin-left: 10px;
+      color: $coolGrey;
+    }
+    .rating {
+      margin-top: 10px;
+      margin-right: 10px;
+      margin-left: 10px;
+      color: $coolGrey;
+      span {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+    .phone {
+      margin-top: 5px;
+      margin-right: 10px;
+      margin-left: 10px;
+      color: $coolGrey;
+      span {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+    .image {
+      height: 120px;
+      width: 120px;
+    }
+  }
 }
 .icon {
   display: inline-block;
@@ -26,4 +82,7 @@
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+}
+img {
+  border-radius: 8px;
 }
