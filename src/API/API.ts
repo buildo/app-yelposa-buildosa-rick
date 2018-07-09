@@ -1,4 +1,5 @@
-// import { IYelpBusiness } from "model";
+import { IOYelpBusiness } from "model";
+import { IYelpBusiness } from "model";
 
 export const getRandomName = (length: number) => {
   return fetch(`http://uinames.com/api/?minlen=${length}&maxlen=${length}`)
@@ -11,7 +12,10 @@ export const getRandomName = (length: number) => {
 const API_KEY =
   "2KWxqPmEKXqgsSHCjIymjZmsAVXt7bzZO1O3pAFVUjZXMU6yyWkoUwXcLxJvRjq_-ZOnmvX15S01Zi2A7bc62Kr0Xwk5NEZ5k8f7c99H7mxQxeGIkBApX7SCXQlCW3Yx";
 
-export const getRestaurants = (location: string, range: number) => {
+export const getRestaurants = (
+  location: string,
+  range: number
+): Promise<IOYelpBusiness[]> => {
   return fetch(
     `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?categories=restaurants&location=${location}&radius=${range}`,
     {
@@ -23,8 +27,13 @@ export const getRestaurants = (location: string, range: number) => {
     }
   )
     .then(res => res.json())
-    .then(res => {
-      console.log(res);
-      return res;
-    }) as Promise<string>;
+    .then(json => {
+      return json.businesses.map((business: string) => {
+        const v = IYelpBusiness.decode(business);
+        if (v.isLeft()) {
+          throw new Error("Error while decoding");
+        }
+        return IYelpBusiness.decode(business).value;
+      });
+    });
 };

@@ -1,7 +1,7 @@
 import * as React from "react";
 import View from "View";
 import Panel from "Panel";
-import "./RestaurantCard.scss";
+import "./restaurantCard.scss";
 import { RestaurantInfo } from "model";
 
 const RestaurantCard: React.SFC<RestaurantInfo> = props => {
@@ -16,6 +16,7 @@ const RestaurantCard: React.SFC<RestaurantInfo> = props => {
   };
 
   return (
+    // console.log(infoToBeRendered.toString());
     <Panel
       className={props.isPlaceholder ? "cardplaceholder" : "card"}
       type="floating"

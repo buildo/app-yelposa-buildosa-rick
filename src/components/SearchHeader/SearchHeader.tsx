@@ -8,7 +8,7 @@ import { injectIntl, InjectedIntlProps } from "react-intl";
 import debounce = require("lodash/debounce");
 
 type State = {
-  value: string;
+  locationInput: string;
 };
 
 const dropdownOptions = [
@@ -34,25 +34,28 @@ interface SearchHeaderProps {
   location: string;
   range: number;
   onChangeLocation: (newLocation: string) => void;
-  onChangeRange: (newRange: number) => void;
+  onChangeRange: (newRange: number, newRangeLabel: string) => void;
 }
 
 class SearchHeaderWrapper extends React.Component<
   SearchHeaderProps & InjectedIntlProps,
   State
 > {
-  state = { value: "" };
+  state = { locationInput: this.props.location };
 
   onChangeInputLocation = (newLocation: string) => {
-    this.setState({ value: newLocation }, () => {
+    this.setState({ locationInput: newLocation }, () => {
       this.onChangeLocationDebounced(newLocation);
     });
   };
 
-  onChangeLocationDebounced = debounce(this.props.onChangeLocation, 1000);
+  onChangeLocationDebounced = debounce(this.props.onChangeLocation, 500);
 
   onChangeDropdown = (newRange: number) => {
-    this.props.onChangeRange(newRange);
+    let newLabel = dropdownOptions.filter(obj => obj.value === newRange)[0]
+      .label;
+
+    this.props.onChangeRange(newRange, newLabel);
   };
 
   render() {
@@ -76,7 +79,7 @@ class SearchHeaderWrapper extends React.Component<
             placeholder={this.props.intl.formatMessage({
               id: "SearchHeader.placeholder"
             })}
-            value={this.state.value}
+            value={this.state.locationInput}
             onChange={this.onChangeInputLocation}
           />
           <View className="label">

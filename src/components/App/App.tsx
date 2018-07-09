@@ -18,12 +18,14 @@ import SearchResults from "SearchResults";
 type State = {
   location: string;
   range: number;
+  rangeLabel: string;
 };
 
 class App extends React.Component<State> {
   state = {
-    location: "milano",
-    range: 100
+    location: "Milano",
+    range: 200,
+    rangeLabel: "200 m"
   };
 
   render() {
@@ -35,13 +37,14 @@ class App extends React.Component<State> {
           onChangeLocation={(newLocation: string) => {
             this.setState({ location: newLocation });
           }}
-          onChangeRange={(newRange: number) => {
-            this.setState({ range: newRange });
+          onChangeRange={(newRange: number, newRangeLabel: string) => {
+            this.setState({ range: newRange, rangeLabel: newRangeLabel });
           }}
         />
         <SearchResults
           location={this.state.location}
           range={this.state.range}
+          rangeLabel={this.state.rangeLabel}
         />
       </View>
     );

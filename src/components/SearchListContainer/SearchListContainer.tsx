@@ -1,39 +1,45 @@
 import * as React from "react";
-import View from "View";
-import ScrollView from "ScrollView";
 import "./searchListContainer.scss";
 import { restaurantsList } from "queries";
 import { declareQueries } from "@buildo/bento/data";
+import RestaurantCard from "RestaurantCard";
+import IOYelpBusiness from "model";
 
 const queries = declareQueries({ restaurantsList });
 
-type Props = typeof queries.Props;
+type Props = {
+  location: string;
+  range: number;
+} & typeof queries.Props;
 class SearchListContainer extends React.Component<Props> {
   render() {
-    const restaurantList = this.props.restaurantsList;
-    if (restaurantList.ready == true) {
+    const res = this.props.restaurantsList;
+    if (res.ready == true) {
+      console.log(res.value[0]);
+      return res.value.map((place: IOYelpBusiness) => (
+        <RestaurantCard
+          key={place.name}
+          name={place.name}
+          rating={place.rating}
+          phone={place.phone}
+          image={place.image_url}
+          isPlaceholder={false}
+        />
+      ));
+    } else if (res.ready == false && res.loading == true) {
       return (
-        <View column className="ListContainer">
-          <ScrollView>
-            {/* <View column className="listing">
-              {this.props.places.map((place: RestaurantInfo) => (
-                <RestaurantCard
-                  name={place.name}
-                  rating={place.rating}
-                  phone={place.phone}
-                  image={place.image}
-                  isPlaceholder={place.isPlaceholder}
-                />
-              ))}
-            </View> */}
-          </ScrollView>
-        </View>
+        <RestaurantCard
+          name={""}
+          rating={1}
+          phone={""}
+          image={""}
+          isPlaceholder={true}
+        />
       );
     } else {
-      return <View column className="results" />;
+      return null;
     }
   }
-  // }
 }
 
 export default queries(SearchListContainer) as React.ComponentType<{
