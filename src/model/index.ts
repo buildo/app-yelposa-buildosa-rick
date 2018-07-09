@@ -24,6 +24,21 @@ in the example app created by default:
 import { HistoryLocation } from "@buildo/bento/data";
 
 export { HistoryLocation };
+import * as t from "io-ts";
+
+export const IYelpBusiness = t.interface({
+  id: t.string,
+  name: t.string,
+  rating: t.number,
+  distance: t.number,
+  phone: t.string,
+  image_url: t.string
+});
+
+export const IYelpRestaurantList = t.interface({
+  businesses: t.string,
+  total: t.number
+});
 
 export type RestaurantInfo = {
   name: string;
@@ -31,13 +46,6 @@ export type RestaurantInfo = {
   phone: string;
   image: string;
   isPlaceholder: boolean;
-};
-
-export type SearchModel = {
-  places: Array<RestaurantInfo>;
-  location: string;
-  range: number;
-  isSearching: boolean;
 };
 
 export type CurrentView = "home" | "search";
